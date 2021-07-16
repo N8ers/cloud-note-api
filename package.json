@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "testScript": "node testScript.js"
+    "userSeed": "node ./customSeeds/userSeed.js"
   },
   "author": "",
   "license": "ISC",
