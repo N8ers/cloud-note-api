@@ -6,29 +6,35 @@ const { development } = require("../knexFile");
 const knex = require("knex")(development);
 
 async function seed() {
-  await knex.schema.dropTableIfExists("notes");
+  await knex.schema.raw(`
+    DROP TABLE IF EXISTS notes;
+  `);
 
-  await knex.schema.createTable("notes", (table) => {
-    table.increments("id");
-    table.string("note");
-    table
-      .integer("user_id")
-      .unsigned()
-      .notNullable()
-      .references("id")
-      .inTable("users")
-      .onDelete("CASCADE");
-  });
+  // NATHAN: don't forget to add cascade later
+  await knex.schema.raw(`
+    CREATE TABLE notes (
+      id serial PRIMARY KEY,
+      note TEXT,
+      user_id INT NOT NULL,
+      FOREIGN KEY (user_id)
+        REFERENCES users (id)
+    );
+  `);
 
-  const notes = await knex("notes")
-    .insert([
-      { note: "take out trash", user_id: 1 },
-      { note: "consider apple", user_id: 2 },
-      { note: "forget all bad", user_id: 3 },
-      { note: "await sign fix", user_id: 4 },
-    ])
-    .returning("*");
-  console.log("notes ", notes);
+  await knex.schema.raw(`
+    INSERT INTO notes (note, user_id)
+    VALUES
+      ('take out trash', 1),
+      ('consider apple', 2),
+      ('forget all bad', 3),
+      ('await sign fix', 4)
+  `);
+
+  const { rows } = await knex.schema.raw(`
+      SELECT * FROM notes;
+  `);
+
+  console.log("result: ", rows);
 }
 
 seed()
