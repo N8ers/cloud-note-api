@@ -5,6 +5,8 @@
 const { development } = require("../knexFile");
 const knex = require("knex")(development);
 
+// REWRITE ALL SEEDS TO BE RAW SQL
+
 async function seed() {
   await knex.schema.dropTableIfExists("users");
 
