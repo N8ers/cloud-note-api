@@ -8,7 +8,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "userSeed": "node ./customSeeds/userSeed.js",
-    "messageSeed": "node ./customSeeds/messageSeed.js",
+    "noteSeed": "node ./customSeeds/noteSeed.js",
     "plantAllSeeds": "node ./customSeeds/plantAllSeeds.js"
   },
   "author": "",
