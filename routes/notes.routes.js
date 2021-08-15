@@ -8,4 +8,12 @@ router.get("/", async (req, res) => {
   res.send(notes);
 });
 
+router.get("/:id", async (req, res) => {
+  const result = await knex.raw("SELECT * FROM notes WHERE id = :id;", {
+    id: req.params.id,
+  });
+  const notes = result.rows;
+  res.send(notes);
+});
+
 module.exports = router;
