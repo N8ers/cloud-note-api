@@ -1,5 +1,4 @@
 const express = require("express");
-const http = require("http");
 
 const routes = {
   user: require("./users.routes"),
@@ -7,9 +6,12 @@ const routes = {
 };
 
 const app = express();
-const server = http.createServer(app);
+
+app.get("/", (req, res) => {
+  res.status(200).send("Hello World!");
+});
 
 app.use("/users", routes.user);
 app.use("/notes", routes.note);
 
-module.exports = { server };
+module.exports = { app };
