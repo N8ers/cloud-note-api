@@ -14,4 +14,8 @@ app.get("/", (req, res) => {
 app.use("/users", routes.user);
 app.use("/notes", routes.note);
 
-module.exports = { app };
+app.get("*", function (req, res) {
+  res.status(404).send("route does not exist");
+});
+
+module.exports = app;

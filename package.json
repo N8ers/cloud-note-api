@@ -4,20 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "userSeed": "node ./customSeeds/userSeed.js",
-    "noteSeed": "node ./customSeeds/noteSeed.js",
-    "plantAllSeeds": "node ./customSeeds/plantAllSeeds.js"
+    "test": "jest",
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
+    "userSeed": "node ./src/customSeeds/userSeed.js",
+    "noteSeed": "node ./src/customSeeds/noteSeed.js",
+    "plantAllSeeds": "node ./src/customSeeds/plantAllSeeds.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "jest": "^27.0.6",
     "knex": "^0.95.7",
     "nodemon": "^2.0.12",
-    "pg": "^8.6.0"
+    "pg": "^8.6.0",
+    "supertest": "^6.1.5"
   },
   "devDependencies": {
     "eslint": "^7.30.0",

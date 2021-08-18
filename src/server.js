@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === "test") {
   knex = require("knex")(test);
 }
 
-const { app } = require("./routes/app");
+const app = require("./routes/app");
 const PORT = process.env.PORT || 4000;
 
 async function init() {
