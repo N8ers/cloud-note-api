@@ -2,7 +2,7 @@
 // destroy existing note table, repopulate note table //
 ////////////////////////////////////////////////////////
 
-const { development } = require("../knexFile");
+const { development } = require("../../knexFile");
 const knex = require("knex")(development);
 
 async function seed() {
