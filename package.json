@@ -11,9 +11,19 @@
     "noteSeed": "node ./src/customSeeds/noteSeed.js",
     "plantAllSeeds": "node ./src/customSeeds/plantAllSeeds.js"
   },
+  "pg": {
+    "test": {
+      "migrationsScript": [
+        "npm",
+        "run",
+        "plantAllSeeds"
+      ]
+    }
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@databases/pg-test": "^3.0.1",
     "express": "^4.17.1",
     "jest": "^27.0.6",
     "knex": "^0.95.7",
