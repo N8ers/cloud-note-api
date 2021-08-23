@@ -9,14 +9,15 @@
     "dev": "nodemon ./src/server.js",
     "userSeed": "node ./src/customSeeds/userSeed.js",
     "noteSeed": "node ./src/customSeeds/noteSeed.js",
-    "plantAllSeeds": "node ./src/customSeeds/plantAllSeeds.js"
+    "plantAllSeeds": "node ./src/customSeeds/plantAllSeeds.js",
+    "testSeed": "node ./src/customSeeds/testSeed.js"
   },
   "pg": {
     "test": {
       "migrationsScript": [
         "npm",
         "run",
-        "plantAllSeeds"
+        "testSeed"
       ]
     }
   },
