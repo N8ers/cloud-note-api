@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 const routes = {
   user: require("./users.routes"),
@@ -6,6 +7,9 @@ const routes = {
 };
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.status(200).send("Hello World!");

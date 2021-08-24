@@ -25,6 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "@databases/pg-test": "^3.0.1",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "jest": "^27.0.6",
     "knex": "^0.95.7",
