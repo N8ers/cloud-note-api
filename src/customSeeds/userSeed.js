@@ -2,8 +2,7 @@
 // destroy existing user table, repopulate user table //
 ////////////////////////////////////////////////////////
 
-const { development } = require("../knexFile");
-const knex = require("knex")(development);
+const knex = require("../../config/config");
 
 // REWRITE ALL SEEDS TO BE RAW SQL
 

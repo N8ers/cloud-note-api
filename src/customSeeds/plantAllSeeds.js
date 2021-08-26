@@ -2,8 +2,7 @@
 // destroy all existing tables and replant all seeds //
 ///////////////////////////////////////////////////////
 
-const { development } = require("../../knexFile");
-const knex = require("knex")(development);
+const knex = require("../../config/config");
 
 async function plantAllSeeds() {
   console.log("drop all tables");

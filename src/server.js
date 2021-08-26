@@ -1,9 +1,4 @@
-const { test, development } = require("../knexFile");
-let knex = require("knex")(development);
-
-if (process.env.NODE_ENV === "test") {
-  knex = require("knex")(test);
-}
+const knex = require("../config/config");
 
 const app = require("./routes/app");
 const PORT = process.env.PORT || 4000;

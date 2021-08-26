@@ -1,5 +1,4 @@
 const request = require("supertest");
-// const { testConfig } = require("../../knexFile");
 const app = require("../../src/routes/app");
 
 describe("Test the root path", () => {

@@ -2,8 +2,7 @@
 // a migration to destroy/rebuild tables for tests //
 /////////////////////////////////////////////////////
 
-const { development } = require("../../knexFile");
-const knex = require("knex")(development);
+const knex = require("../../config/config");
 
 async function plantAllSeeds() {
   console.log("drop all tables");

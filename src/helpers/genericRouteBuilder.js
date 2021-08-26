@@ -1,7 +1,6 @@
-const { development } = require("../../knexFile");
-const knex = require("knex")(development);
+const knex = require("../../config/config");
 
-// available options: ['getAll', 'getById']
+// available options: ['getAll', 'getById', 'deleteById']
 
 function createGenericRoutes(routes, table, router) {
   for (let route of routes) {
@@ -21,6 +20,16 @@ function createGenericRoutes(routes, table, router) {
         res.status(200).send(result);
       });
     }
+
+    // if (route === "deleteById") {
+    //   router.delete("/", async (req, res) => {
+    //     const result = await knex
+    //       .where({ id: req.params.id })
+    //       .del()
+    //       .returning("*");
+    //     res.status(200).send(result);
+    //   });
+    // }
   }
 }
 
