@@ -11,7 +11,7 @@ async function plantAllSeeds() {
 
   await knex.schema.createTable("users", (table) => {
     table.increments("id");
-    table.string("user_name");
+    table.string("user_name").notNullable();
   });
 
   const users = await knex("users")
