@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// const knex = require("../../config/config");
 
 const { createGenericRoutes } = require("../helpers/genericRouteBuilder");
 const { postUser } = require("../controllers/users.controller");
