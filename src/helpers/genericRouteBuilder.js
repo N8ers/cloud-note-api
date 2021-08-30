@@ -12,7 +12,7 @@ function createGenericRoutes(routes, table, router) {
     }
 
     if (route === "getById") {
-      router.get("/", async (req, res) => {
+      router.get("/:id", async (req, res) => {
         const result = await knex
           .select("*")
           .from(table)
