@@ -6,28 +6,14 @@ const app = require("../../src/routes/app");
 describe("CRUD", () => {
   describe("POST", () => {
     test("Full body", async () => {
-      let newUserId;
-      await request(app)
+      const newUserRequest = await request(app)
         .post("/users")
-        .send({ userName: "Tsuki the Cat" })
-        .expect((res) => {
-          newUserId = res.body[0].id;
+        .send({ userName: "Tsuki the Cat" });
 
-          let userName = res.body[0].user_name;
-          let id = res.body[0].id;
-          delete res.body;
-
-          res.body = {
-            userName,
-            id,
-          };
-
-          console.log("res ", res.body);
-        })
-        .expect(200, {
-          userName: "Tsuki the Cat",
-          id: 1,
-        });
+      expect(newUserRequest.body[0]).toStrictEqual({
+        user_name: "Tsuki the Cat",
+        id: newUserRequest.body[0].id,
+      });
     });
 
     test("No userName", async () => {
