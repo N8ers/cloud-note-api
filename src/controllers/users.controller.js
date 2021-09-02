@@ -3,7 +3,7 @@ const knex = require("../../config/config");
 async function postUser(body) {
   const { userName } = body;
 
-  if (!userName.length) {
+  if (!userName || !userName.length) {
     return {
       status: 400,
       result: "Username is needed.",
