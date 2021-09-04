@@ -25,11 +25,21 @@ describe("CRUD", () => {
     });
 
     test("No userId", async () => {
-      // TODO
+      const newNoteRequest = await request(app).post("/notes").send({
+        note: "MEOWWWWW",
+      });
+
+      expect(newNoteRequest.statusCode).toBe(400);
+      expect(newNoteRequest.error.text).toBe("'note' and 'userId' are needed.");
     });
 
     test("No note", async () => {
-      // TODO
+      const newNoteRequest = await request(app).post("/notes").send({
+        note: "MEOWWWWW",
+      });
+
+      expect(newNoteRequest.statusCode).toBe(400);
+      expect(newNoteRequest.error.text).toBe("'note' and 'userId' are needed.");
     });
   });
 });
