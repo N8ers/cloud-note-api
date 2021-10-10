@@ -14,6 +14,7 @@ async function seed() {
     CREATE TABLE notes (
       id serial PRIMARY KEY,
       note TEXT,
+      title TEXT,
       user_id INT NOT NULL,
       FOREIGN KEY (user_id)
         REFERENCES users (id)
@@ -21,12 +22,12 @@ async function seed() {
   `);
 
   await knex.schema.raw(`
-    INSERT INTO notes (note, user_id)
+    INSERT INTO notes (note, title, user_id)
     VALUES
-      ('take out trash', 1),
-      ('consider apple', 2),
-      ('forget all bad', 3),
-      ('await sign fix', 4)
+      ('take out trash', 'goon note 1', 1),
+      ('consider apple', 'joe note 1', 2),
+      ('forget all bad', 'cat note 1', 3),
+      ('await sign fix', 'n8 note 1', 4)
   `);
 
   const { rows } = await knex.schema.raw(`

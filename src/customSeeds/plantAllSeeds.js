@@ -27,6 +27,7 @@ async function plantAllSeeds() {
   await knex.schema.createTable("notes", (table) => {
     table.increments("id");
     table.string("note");
+    table.string("title");
     table
       .integer("user_id")
       .unsigned()
@@ -38,10 +39,10 @@ async function plantAllSeeds() {
 
   const notes = await knex("notes")
     .insert([
-      { note: "take out trash", user_id: 1 },
-      { note: "consider apple", user_id: 2 },
-      { note: "forget all bad", user_id: 3 },
-      { note: "await sign fix", user_id: 4 },
+      { note: "take out trash", title: "goon note 1", user_id: 1 },
+      { note: "consider apple", title: "joe note 1", user_id: 2 },
+      { note: "forget all bad", title: "cat note 1", user_id: 3 },
+      { note: "await sign fix", title: "n8 note 1", user_id: 4 },
     ])
     .returning("*");
   console.log("notes ", notes);
