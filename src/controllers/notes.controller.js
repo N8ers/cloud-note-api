@@ -30,4 +30,29 @@ async function postNote(body) {
   };
 }
 
-module.exports = { postNote };
+async function getNotesByUserId(body) {
+  if (!body.userId) {
+    return {
+      status: 400,
+      result: "'userId', is needed",
+    };
+  }
+
+  let result;
+
+  try {
+    result = await knex("notes").where({ user_id: body.userId });
+  } catch (error) {
+    return {
+      status: 400,
+      result: `There was a problem fetching notes: \n${error.message}`,
+    };
+  }
+
+  return {
+    result,
+    status: 200,
+  };
+}
+
+module.exports = { postNote, getNotesByUserId };
