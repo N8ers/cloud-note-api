@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
     "userSeed": "node ./src/customSeeds/userSeed.js",
