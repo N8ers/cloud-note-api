@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
   res.status(status).send(result);
 });
 
-const genericRoutesToMake = ["getAll", "getById"];
+const genericRoutesToMake = ["getAll", "getById", "getAllSlow"];
 const tableToQuery = "notes";
 createGenericRoutes(genericRoutesToMake, tableToQuery, router);
 

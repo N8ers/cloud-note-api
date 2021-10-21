@@ -11,8 +11,15 @@ function createGenericRoutes(routes, table, router) {
       });
     }
 
+    if (route === "getAllSlow") {
+      router.get("/slow", async (req, res) => {
+        const result = await knex().select("*").from(table);
+        setTimeout(() => res.status(200).send(result), 1500);
+      });
+    }
+
     if (route === "getById") {
-      router.get("/:id", async (req, res) => {
+      router.get("/note/:id", async (req, res) => {
         const result = await knex
           .select("*")
           .from(table)
