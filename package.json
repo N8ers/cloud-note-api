@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest",
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
     "userSeed": "node ./src/customSeeds/userSeed.js",
@@ -27,16 +27,16 @@
     "@databases/pg-test": "^3.0.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "jest": "^27.0.6",
-    "knex": "^0.95.7",
-    "nodemon": "^2.0.12",
-    "pg": "^8.6.0",
-    "supertest": "^6.1.5"
+    "jest": "^27.3.1",
+    "knex": "^0.95.13",
+    "nodemon": "^2.0.14",
+    "pg": "^8.7.1",
+    "supertest": "^6.1.6"
   },
   "devDependencies": {
-    "eslint": "^7.30.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.2"
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1"
   }
 }
