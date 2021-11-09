@@ -42,7 +42,10 @@ async function plantAllSeeds() {
       { note: "take out trash", title: "goon note 1", user_id: 1 },
       { note: "consider apple", title: "joe note 1", user_id: 2 },
       { note: "forget all bad", title: "cat note 1", user_id: 3 },
-      { note: "await sign fix", title: "n8 note 1", user_id: 4 },
+      { note: "await sign fix", title: "note 1", user_id: 4 },
+      { note: "empty turtle shells", title: "another note", user_id: 4 },
+      { note: "create lists", title: "to do", user_id: 4 },
+      { note: "nothing", title: "cleaning list", user_id: 4 },
     ])
     .returning("*");
   console.log("notes ", notes);
