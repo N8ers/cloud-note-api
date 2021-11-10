@@ -5,7 +5,7 @@ const knex = require("../../config/config");
 function createGenericRoutes(routes, table, router) {
   for (let route of routes) {
     if (route === "getAll") {
-      router.get("/", async (req, res) => {
+      router.get("/getAll", async (req, res) => {
         const result = await knex().select("*").from(table);
         res.status(200).send(result);
       });

@@ -6,13 +6,13 @@ const {
   getNotesByUserId,
 } = require("../controllers/notes.controller");
 
-router.get("/getUserNotes", async (req, res) => {
-  const { result, status } = await getNotesByUserId(req.body);
+router.post("/", async (req, res) => {
+  const { result, status } = await postNote(req.body);
   res.status(status).send(result);
 });
 
-router.post("/", async (req, res) => {
-  const { result, status } = await postNote(req.body);
+router.get("/", async (req, res) => {
+  const { result, status } = await getNotesByUserId(req.body);
   res.status(status).send(result);
 });
 
